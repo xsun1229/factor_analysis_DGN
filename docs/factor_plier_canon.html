@@ -9,9 +9,11 @@
 <meta name="generator" content="pandoc" />
 
 
+<meta name="author" content="XSun" />
 
+<meta name="date" content="2020-09-14" />
 
-<title>Factor Analysis–DGN data</title>
+<title>factor_plier_canon</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,6 +21,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -270,6 +275,90 @@ $(document).ready(function () {
 
 
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -277,6 +366,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -320,7 +419,9 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Factor Analysis–DGN data</h1>
+<h1 class="title toc-ignore">factor_plier_canon</h1>
+<h4 class="author">XSun</h4>
+<h4 class="date">2020-09-14</h4>
 
 </div>
 
@@ -348,7 +449,7 @@ $(document).ready(function () {
 <strong>Last updated:</strong> 2020-09-15
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>factor_analysis_DGN/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -370,6 +471,66 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
 <div class="panel-body">
 <p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20200914code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20200914)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20200914code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20200914)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
 </div>
 </div>
 </div>
@@ -407,7 +568,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/index.Rmd</code>) and HTML (<code>docs/index.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/factor_plier_canon.Rmd</code>) and HTML (<code>docs/factor_plier_canon.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -436,7 +597,7 @@ Message
 Rmd
 </td>
 <td>
-<a href="https://github.com/xsun1229/factor_analysis_DGN/blob/349226924ead5e5bdb3a98fbff48098b930f93cb/analysis/index.Rmd" target="_blank">3492269</a>
+<a href="https://github.com/xsun1229/factor_analysis_DGN/blob/349226924ead5e5bdb3a98fbff48098b930f93cb/analysis/factor_plier_canon.Rmd" target="_blank">3492269</a>
 </td>
 <td>
 XSun
@@ -448,40 +609,6 @@ XSun
 update
 </td>
 </tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/xsun1229/factor_analysis_DGN/0460f2f86b09d241eda479e0a99e7f30fef1fa73/docs/index.html" target="_blank">0460f2f</a>
-</td>
-<td>
-XSun
-</td>
-<td>
-2020-09-14
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/xsun1229/factor_analysis_DGN/blob/7a97caabea890030d49b928bc5f62582d71b5ec8/analysis/index.Rmd" target="_blank">7a97caa</a>
-</td>
-<td>
-XSun
-</td>
-<td>
-2020-09-14
-</td>
-<td>
-Start workflowr project.
-</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -489,76 +616,60 @@ Start workflowr project.
 </div>
 </div>
 </div>
-<p>This page is about factor analysis. The main framework is similar with <a href="https://xsun1229.github.io/factor_analysis/">factor analysis using GTEx data</a>. So, I omitted some detailed explaination in this page.</p>
-<div id="factor-construction" class="section level1">
-<h1><strong>Factor Construction</strong></h1>
-<p>I used <a href="https://github.com/wgmao/PLIER">PLIER</a> to construct factors from DGN gene expression matrix of whole blood(922 samples, 12,491 genes). Genes on chrX were excluded when extracting factors.</p>
-<div id="plier" class="section level2">
-<h2>PLIER</h2>
-<ul>
-<li>plier-canonicalPathways</li>
-</ul>
-<p>In this part, I just used canonicalPathways which include KEGG and Reactome pathways to extract factors and obtained 110 factors. <a href="https://xsun1229.github.io/factor_analysis_DGN/factor_plier_canon.html">For more details</a></p>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>I used ‘PLIER’ package(with default settings) to construct factors related to Canonical Pathways here.</p>
 </div>
+<div id="results" class="section level2">
+<h2>Results</h2>
+<div id="overview" class="section level3">
+<h3>Overview</h3>
+<pre><code>- I used 12,491 gene in DGN data set to construct factors. 5568 of them were used in PLIER.
+- I used CanonicalPathways in PLIER R package, which contains 545 curated pathways from Reactome and KEGG.
+- I obtained 110 LVs from PLIER, 25 of them have AUC &gt; 0.70(see figure below).</code></pre>
 </div>
-<div id="factor-evaluation" class="section level1">
-<h1><strong>Factor evaluation</strong></h1>
-<p>I first evaluated the heritability of factors using <a href="https://cnsgenomics.com/software/gcta/#GREML">GCTA</a> and made histogrames to show the distribution of the heritabilities.</p>
-<p>When computing heritability, I used DGN genotype data which contains 720,591 variants.</p>
-<div id="plier-1" class="section level2">
-<h2>PLIER</h2>
-<ul>
-<li>plier-canonicalPathways</li>
-</ul>
-<p><a href="https://xsun1229.github.io/factor_analysis_DGN/eval_plier_canon.html">For more details</a></p>
-</div>
-</div>
-<div id="prediction-models-for-factors" class="section level1">
-<h1><strong>Prediction models for factors</strong></h1>
-<p>In this part, I tried to train prediction models for factors ~ genotype using Lasso and Elastic-net.</p>
-<p>The workflow:</p>
-<ol style="list-style-type: decimal">
-<li><p>I splited the data set into training(80%, 738 samples) and test(20%, 184 samples) set.</p></li>
-<li><p>In the training data, performed association test between the factors and all SNPs using Plink. I corrected the results for genotype PCs (We used Plink to compute 10 PCs and used them as corvariates in association test).</p></li>
-<li><p>From 3, we selected all SNPs with p &lt; 1e-02 as candidate variants.</p></li>
-<li><p>Trained Lasso/Elastic-net models using SNPs from step4 in the training data and evaluated the performance in the testing data.</p></li>
-<li><p>For factors with relatively low pval_test_l, I did GWAS analysis using all DGN samples(922 samples). In the association tests, first 10 genotype pcs were included as covariants.</p></li>
-</ol>
-<div id="training-models-with-all-variants" class="section level2">
-<h2><strong>Training models with all variants</strong></h2>
-<p>There are some missing values in our dataset. I used mean imputation (substitue the missing values with mean value of the corresponding variants) to impute the missing value.</p>
-<div id="plier-2" class="section level3">
-<h3>PLIER</h3>
-<p><a href="https://xsun1229.github.io/factor_analysis_DGN/train_plier_canon.html">Results for plier-canonicalPathways factors</a></p>
-</div>
-</div>
-<div id="making-the-prediction-models-better" class="section level2">
-<h2><strong>Making the prediction models better</strong></h2>
-<div id="finding-functional-snps" class="section level3">
-<h3><strong><em>Finding functional SNPs</em></strong></h3>
-<p>In step 5, the GWAS power of some factors is low. So I tried to find functional SNPs to increase the GWAS power and reduce the testing burden.</p>
-</div>
-<div id="ld-score-regression" class="section level3">
-<h3>LD Score Regression</h3>
-<p>I adopted LD score regression to estimate SNP-based heritability and partation the heritability into seperate categories. The software I used here is <a href="https://github.com/bulik/ldsc">ldsc</a>.</p>
-<div id="plier-3" class="section level4">
-<h4>PLIER</h4>
-<p><a href="https://xsun1229.github.io/factor_analysis_DGN/ldsc_plier_canon.html">Results for plier-canonicalPathways factors</a></p>
-</div>
-</div>
-<div id="finding-functional-cis-genes" class="section level3">
-<h3><strong><em>Finding functional cis-genes</em></strong></h3>
-<p>There might be overfitting issue. So we tried one/two sample settings to test and eliminate the overfitting issue.</p>
-<p>The rought process are below, it differs slightly in different settings.</p>
-<ol style="list-style-type: decimal">
-<li><p>Train weights from expression matrix and genotype matrix. Variants are cis-snps (±500kb from the TSS of genes)</p></li>
-<li><p>Impute the cis genetic component part of gene expression (cis-genes):</p>
-<p>cis-genes = weights * genotype of cis-genes</p></li>
-<li><p>Association test: factors ~ cis-genes + 10 genotype pcs. Record the p-values for each gene.</p></li>
-<li><p>Count the number of significant associations at various p-value threshold for each factor.</p></li>
-</ol>
-<p><a href="https://xsun1229.github.io/factor_analysis_DGN/cg-onesample.html">One Sample Setting</a></p>
-<p><a href="https://xsun1229.github.io/factor_analysis_DGN/cg-twosample.html">Two Sample Setting</a></p>
+<div id="lvs-with-auc0.70" class="section level3">
+<h3>LVs with AUC&gt;0.70</h3>
+<pre class="r"><code>plotU(plierResult, auc.cutoff = 0.7, fdr.cutoff = 0.05, top =3) </code></pre>
+<figure class="half">
+<img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/Umat_wb_pliercanon.jpeg" width="80%">
+</figure>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 3.6.1 (2019-07-05)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Scientific Linux 7.4 (Nitrogen)
+
+Matrix products: default
+BLAS/LAPACK: /software/openblas-0.2.19-el7-x86_64/lib/libopenblas_haswellp-r0.2.19.so
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] workflowr_1.6.2
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.5      rprojroot_1.3-2 digest_0.6.25   later_0.8.0    
+ [5] R6_2.4.1        backports_1.1.9 git2r_0.26.1    magrittr_1.5   
+ [9] evaluate_0.14   stringi_1.4.6   fs_1.3.1        promises_1.0.1 
+[13] whisker_0.3-2   rmarkdown_1.13  tools_3.6.1     stringr_1.4.0  
+[17] glue_1.4.2      httpuv_1.5.1    xfun_0.16       yaml_2.2.1     
+[21] compiler_3.6.1  htmltools_0.3.6 knitr_1.29     </code></pre>
 </div>
 </div>
 </div>
@@ -577,6 +688,8 @@ footer is added to webpages before the MathJax javascript. -->
 </script>
 
 
+</div>
+</div>
 
 </div>
 
