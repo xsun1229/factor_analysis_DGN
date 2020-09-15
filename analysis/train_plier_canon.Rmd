@@ -59,22 +59,22 @@ The red line in manhattan plot means p-value is 5e-8.
 #### lv22
 
 <figure class="half">
-    <img src="https://github.com/xsun1229/factor_analysis/raw/master/output/LV22_pliercanon.jpeg" width="200%">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/LV22_pliercanon.jpeg" width="200%">
 </figure>
 
 <figure class="half">
-    <img src="https://github.com/xsun1229/factor_analysis/raw/master/output/qq_unif_lv22_pliercanon.jpeg" width="40%">
-    <img src="https://github.com/xsun1229/factor_analysis/raw/master/output/man_lv22_pliercanon.jpeg" width="40%">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/qq_unif_lv22_pliercanon.jpeg" width="40%">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/man_lv22_pliercanon.jpeg" width="40%">
 </figure>
 
 
 #### lv102
 
 <figure class="half">
-    <img src="https://github.com/xsun1229/factor_analysis/raw/master/output/LV102_pliercanon.jpeg" width="200%">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/LV102_pliercanon.jpeg" width="200%">
 </figure>
 
 <figure class="half">
-    <img src="https://github.com/xsun1229/factor_analysis/raw/master/output/qq_unif_lv102_pliercanon.jpeg" width="40%">
-    <img src="https://github.com/xsun1229/factor_analysis/raw/master/output/man_lv102_pliercanon.jpeg" width="40%">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/qq_unif_lv102_pliercanon.jpeg" width="40%">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/man_lv102_pliercanon.jpeg" width="40%">
 </figure>
