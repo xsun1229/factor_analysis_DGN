@@ -37,7 +37,7 @@ Record the p-values for each gene.
 
 1. 12,398 of 12,491 genes have cis-snps.
 
-2. I got 5629 weights from lasso model, 1428 from elastic-net model, 5635 weights from blup models.
+2. I got 5629 weights from lasso model,  5635 weights from blup models.
 
 ### Summary 
 
@@ -46,26 +46,20 @@ The tables below show the number of significant associations at various p-value 
 I also made a histogram to show the distribution of the numbers.
 
 <figure class="half">
-    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/hist_cgonesam.jpeg" width="200%">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/hist_ciscomp_pliercanon.jpeg" width="200%">
 </figure>
 
 - Lasso model
 
 ```{r echo=FALSE}
-load("/project2/xinhe/xsun/website/factor_analysis_DGN/output/compare_sum_lasso.rdata")
+load("/project2/xinhe/xsun/website/factor_analysis_DGN/output/compare_sum_lasso_pliercanon.rdata")
 DT::datatable(summary, options = list(pageLength =10))
 ```
 
-- Elastic-net model 
-
-```{r echo=FALSE}
-load("/project2/xinhe/xsun/website/factor_analysis_DGN/output/compare_sum_enet.rdata")
-DT::datatable(summary, options = list(pageLength =10))
-```
 
 - Blup model 
 
 ```{r echo=FALSE}
-load("/project2/xinhe/xsun/website/factor_analysis_DGN/output/compare_sum_blup.rdata")
+load("/project2/xinhe/xsun/website/factor_analysis_DGN/output/compare_sum_blup_pliercanon.rdata")
 DT::datatable(summary, options = list(pageLength =10))
 ```

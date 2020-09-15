@@ -34,7 +34,7 @@ DT::datatable(aa, options = list(pageLength =10))
 ### LV102
 
 <figure class="half">
-    <img src="https://github.com/xsun11029/factor_analysis_DGN/raw/master/output/ldsc_plier_canon_DGN_lv102.jpeg" width="600%">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/ldsc_plier_canon_DGN_lv102.jpeg" width="600%">
 </figure>
 
 ```{r echo=FALSE}
@@ -46,7 +46,7 @@ DT::datatable(aa, options = list(pageLength =10))
 ### LV46 - Negative control
 
 <figure class="half">
-    <img src="https://github.com/xsun1469/factor_analysis_DGN/raw/master/output/ldsc_plier_canon_DGN_lv46.jpeg" width="600%">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/ldsc_plier_canon_DGN_lv46.jpeg" width="600%">
 </figure>
 
 ```{r echo=FALSE}
@@ -58,7 +58,7 @@ DT::datatable(aa, options = list(pageLength =10))
 ### LV77 - Negative control
 
 <figure class="half">
-    <img src="https://github.com/xsun1779/factor_analysis_DGN/raw/master/output/ldsc_plier_canon_DGN_lv77.jpeg" width="600%">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/ldsc_plier_canon_DGN_lv77.jpeg" width="600%">
 </figure>
 
 ```{r echo=FALSE}
