@@ -95,6 +95,5 @@ I adopted LD score regression to estimate SNP-based heritability and partation t
   
   [One Sample Setting](https://xsun1229.github.io/factor_analysis_DGN/cg-onesample.html)
   
-  [Two Sample Setting](https://xsun1229.github.io/factor_analysis_DGN/cg-twosample.html)
   
   

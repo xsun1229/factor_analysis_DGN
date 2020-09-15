@@ -56,7 +56,6 @@ load("/project2/xinhe/xsun/website/factor_analysis_DGN/output/compare_sum_lasso_
 DT::datatable(summary, options = list(pageLength =10))
 ```
 
-
 - Blup model 
 
 ```{r echo=FALSE}
