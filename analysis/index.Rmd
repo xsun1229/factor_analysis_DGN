@@ -10,6 +10,7 @@ editor_options:
 
 This page is about factor analysis. The main framework is similar with [factor analysis using GTEx data](https://xsun1229.github.io/factor_analysis/). So, I omitted some detailed explaination in this page.
 
+
 # **Factor Construction**
 
   I used [PLIER](https://github.com/wgmao/PLIER) to construct factors from DGN gene expression matrix of whole blood(922 samples, 12,491 genes). Genes on chrX were excluded when extracting factors.
