@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Factor Analysis--DGN data"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -8,4 +8,92 @@ editor_options:
   chunk_output_type: console
 ---
 
-Welcome to my research website.
+This page is about factor analysis. The main framework is similar with [factor analysis using GTEx data](https://xsun1229.github.io/factor_analysis/). So, I omitted some detailed explaination in this page.
+
+# **Factor Construction**
+
+  I used [PLIER](https://github.com/wgmao/PLIER) to construct factors from DGN gene expression matrix of whole blood(922 samples, 12,491 genes). Genes on chrX were excluded when extracting factors.
+
+## PLIER
+
+  - plier-canonicalPathways
+  
+  In this part, I just used canonicalPathways which include KEGG and Reactome pathways to extract factors and obtained 110 factors.  [For more details](https://xsun1229.github.io/factor_analysis_DGN/factor_plier_canon.html)
+  
+# **Factor evaluation**
+
+I first evaluated the heritability of factors using [GCTA](
+https://cnsgenomics.com/software/gcta/#GREML) and made histogrames to show the distribution of the heritabilities.
+
+When computing heritability, I used DGN genotype data which contains 720,591 variants.
+
+## PLIER
+  
+  - plier-canonicalPathways
+
+  [For more details](https://xsun1229.github.io/factor_analysis_DGN/eval_plier_canon.html)
+  
+  
+# **Prediction models for factors**
+
+In this part, I tried to train prediction models for factors ~ genotype using Lasso and Elastic-net. 
+
+The workflow: 
+
+1. I splited the data set into training(80%, 738 samples) and test(20%, 184 samples) set. 
+
+2. In the training data, performed association test between the factors and all SNPs using Plink. I corrected the results for genotype PCs (We used Plink to compute 10 PCs and used them as corvariates in association test).
+
+3. From 3, we selected all SNPs with p < 1e-02 as candidate variants.
+
+4. Trained Lasso/Elastic-net models using SNPs from step4 in the training data and evaluated the performance in the testing data.
+
+5. For factors with relatively low pval_test_l, I did GWAS analysis using all DGN samples(922 samples). In the association tests, first 10 genotype pcs were included as covariants.
+
+## **Training models with all variants**
+
+There are some missing values in our dataset. I used mean imputation (substitue the missing values with mean value of the corresponding variants) to impute the missing value. 
+
+
+### PLIER
+
+  [Results for plier-canonicalPathways factors](https://xsun1229.github.io/factor_analysis_DGN/train_plier_canon.html)
+  
+  
+## **Making the prediction models better**
+
+### ***Finding functional SNPs***
+
+  In step 5, the GWAS power of some factors is low. So I tried to find functional SNPs to increase the GWAS power and reduce the testing burden.
+  
+### LD Score Regression 
+
+I adopted LD score regression to estimate SNP-based heritability and partation the heritability into seperate categories. The software I used here is [ldsc](https://github.com/bulik/ldsc).
+
+
+#### PLIER
+
+  [Results for plier-canonicalPathways factors](https://xsun1229.github.io/factor_analysis_DGN/ldsc_plier_canon.html)
+    
+    
+### ***Finding functional cis-genes***  
+  
+  There might be overfitting issue. So we tried one/two sample settings to test and eliminate the overfitting issue. 
+  
+  The rought process are below, it differs slightly in different settings.
+  
+1. Train weights from expression matrix and genotype matrix. Variants are cis-snps (±500kb from the TSS of genes)
+
+2. Impute the cis genetic component part of gene expression (cis-genes):
+
+	 cis-genes = weights * genotype of cis-genes
+
+3. Association test: factors ~ cis-genes + 10 genotype pcs. Record the p-values for each gene.
+
+4. Count the number of significant associations at various p-value threshold for each factor.
+  
+  [One Sample Setting](https://xsun1229.github.io/factor_analysis_DGN/cg-onesample.html)
+  
+  [Two Sample Setting](https://xsun1229.github.io/factor_analysis_DGN/cg-twosample.html)
+  
+  

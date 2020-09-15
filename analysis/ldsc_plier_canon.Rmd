@@ -1,0 +1,68 @@
+---
+title: "ldsc_plier_canon"
+author: "XSun"
+date: "2020-09-15"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+In this part, I list the ldsc results for plier_CanonicalPathways factors.
+
+I made several plots to show the enrichment and 95% confidence intervals for each lv. Enrichment here is the proportion of prop.h2 devided by prop.snp.
+
+## Results
+
+
+I performed ldsc for lv22,102(lowest pval_test_l from [prediction model](https://xsun1229.github.io/factor_analysis_DGN/train_plier_canon.html) and lv46,77 (lvs with very high pval_test_l).
+
+
+### LV22
+
+<figure class="half">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/ldsc_plier_canon_DGN_lv22.jpeg" width="600%">
+</figure>
+
+```{r echo=FALSE}
+aa <- read.table("/project2/xinhe/xsun/website/factor_analysis_DGN/output/plier_canon_lv22_base.results", header = T)
+DT::datatable(aa, options = list(pageLength =10))
+```
+
+
+### LV102
+
+<figure class="half">
+    <img src="https://github.com/xsun11029/factor_analysis_DGN/raw/master/output/ldsc_plier_canon_DGN_lv102.jpeg" width="600%">
+</figure>
+
+```{r echo=FALSE}
+aa <- read.table("/project2/xinhe/xsun/website/factor_analysis_DGN/output/plier_canon_lv102_base.results", header = T)
+DT::datatable(aa, options = list(pageLength =10))
+```
+
+
+### LV46 - Negative control
+
+<figure class="half">
+    <img src="https://github.com/xsun1469/factor_analysis_DGN/raw/master/output/ldsc_plier_canon_DGN_lv46.jpeg" width="600%">
+</figure>
+
+```{r echo=FALSE}
+aa <- read.table("/project2/xinhe/xsun/website/factor_analysis_DGN/output/plier_canon_lv46_base.results", header = T)
+DT::datatable(aa, options = list(pageLength =10))
+```
+
+
+### LV77 - Negative control
+
+<figure class="half">
+    <img src="https://github.com/xsun1779/factor_analysis_DGN/raw/master/output/ldsc_plier_canon_DGN_lv77.jpeg" width="600%">
+</figure>
+
+```{r echo=FALSE}
+aa <- read.table("/project2/xinhe/xsun/website/factor_analysis_DGN/output/plier_canon_lv77_base.results", header = T)
+DT::datatable(aa, options = list(pageLength =10))
+```
+
