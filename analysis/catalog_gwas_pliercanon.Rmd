@@ -44,7 +44,6 @@ In step 3, I did GWAS analysis for all 110 factors. Here I just post the qqplots
     <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/man_lv102_pliercanon_catagwas_DGN.jpeg" width="80%">
 </figure>
 
-
 ### GWAS results-summary table
 
 I used 'qvalue' R package to compute the fdr from p-values for each gene and made a table to show the number of SNPs that pass the threshold. The threshold of first column is 'fdr < 0.1', the threshold of the second column is 'fdr < 0.2'
