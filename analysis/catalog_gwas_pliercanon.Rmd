@@ -33,15 +33,15 @@ In step 3, I did GWAS analysis for all 110 factors. Here I just post the qqplots
 #### LV22
 
 <figure class="half">
-    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/qq_unif_lv22_pliercanon_catagwas.jpeg" width="80%">
-    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/man_lv22_pliercanon_catagwas.jpeg" width="80%">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/qq_unif_lv22_pliercanon_catagwas_DGN.jpeg" width="80%">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/man_lv22_pliercanon_catagwas_DGN.jpeg" width="80%">
 </figure>
 
 #### LV102
 
 <figure class="half">
-    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/qq_unif_lv102_pliercanon_catagwas.jpeg" width="80%">
-    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/man_lv102_pliercanon_catagwas.jpeg" width="80%">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/qq_unif_lv102_pliercanon_catagwas_DGN.jpeg" width="80%">
+    <img src="https://github.com/xsun1229/factor_analysis_DGN/raw/master/output/man_lv102_pliercanon_catagwas_DGN.jpeg" width="80%">
 </figure>
 
 

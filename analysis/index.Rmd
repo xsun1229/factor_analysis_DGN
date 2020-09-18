@@ -71,16 +71,17 @@ There are some missing values in our dataset. I used mean imputation (substitue 
 
 I adopted LD score regression to estimate SNP-based heritability and partation the heritability into seperate categories. The software I used here is [ldsc](https://github.com/bulik/ldsc).
 
-### Using catalog GWAS data 
-
-To address issues with respect to computational time and multiple testing, I confined our analysis to those SNPs present in the [Catalog of Published GWAS](https://www.ebi.ac.uk/gwas/). I selected the SNPs with fdr > 0.01. Then, I did GWAS analysis for the plier_canonical factors with the SNPs.
-
-[For more details](https://xsun1229.github.io/factor_analysis_DGN/catalog_gwas_pliercanon.html)
 
 #### PLIER
 
   [Results for plier-canonicalPathways factors](https://xsun1229.github.io/factor_analysis_DGN/ldsc_plier_canon.html)
     
+
+### Using catalog GWAS data 
+
+To address issues with respect to computational time and multiple testing, I confined our analysis to those SNPs present in the [Catalog of Published GWAS](https://www.ebi.ac.uk/gwas/). I selected the SNPs with fdr > 0.01. Then, I did GWAS analysis for the plier_canonical factors with the SNPs.
+
+[For more details](https://xsun1229.github.io/factor_analysis_DGN/catalog_gwas_pliercanon.html)
     
 ### ***Finding functional cis-genes***  
   
